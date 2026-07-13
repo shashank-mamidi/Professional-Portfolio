@@ -729,3 +729,181 @@ footer {
     padding: 28px;
   }
 }
+/* =========================================================
+   AI/ML Hardware Artifact Detail Page
+   ========================================================= */
+
+.artifact-detail-hero {
+  width: min(1160px, 92%);
+  margin: 0 auto;
+  padding: 110px 0 55px;
+}
+
+.artifact-detail-inner {
+  max-width: 980px;
+}
+
+.artifact-detail-hero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -4px;
+  margin-bottom: 24px;
+}
+
+.artifact-overview-card,
+.takeaways-card {
+  background: linear-gradient(145deg, var(--surface), var(--surface-soft));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 28px;
+  padding: 38px;
+}
+
+.artifact-overview-card h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+  margin-bottom: 22px;
+}
+
+.artifact-overview-card p {
+  color: var(--muted);
+  margin-bottom: 18px;
+  max-width: 980px;
+}
+
+.artifact-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.timeline-card {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 18px;
+  background: linear-gradient(145deg, var(--surface), var(--surface-soft));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 24px;
+  padding: 26px;
+  transition: 0.25s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.timeline-card span {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #06111f;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+}
+
+.timeline-card h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.timeline-card p {
+  color: var(--muted);
+}
+
+.artifact-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.artifact-info-card {
+  background: linear-gradient(145deg, var(--surface), var(--surface-soft));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 24px;
+  padding: 28px;
+  transition: 0.25s ease;
+}
+
+.artifact-info-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.artifact-info-card h3 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.artifact-info-card p {
+  color: var(--muted);
+}
+
+.analog-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.analog-points div {
+  background: rgba(148, 163, 184, 0.07);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 22px;
+}
+
+.analog-points h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.analog-points p {
+  margin-bottom: 0;
+}
+
+.takeaways-card ul {
+  color: var(--muted);
+  padding-left: 22px;
+}
+
+.takeaways-card li {
+  margin-bottom: 14px;
+}
+
+@media (max-width: 980px) {
+  .artifact-timeline,
+  .artifact-grid-3,
+  .analog-points {
+    grid-template-columns: 1fr;
+  }
+
+  .artifact-detail-hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .timeline-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .artifact-detail-hero {
+    padding: 75px 0 35px;
+  }
+
+  .artifact-detail-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .artifact-overview-card,
+  .takeaways-card {
+    padding: 28px;
+  }
+}
