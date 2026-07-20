@@ -726,3 +726,40 @@ footer {
     font-size: 2.7rem;
   }
 }
+/* Reduce vertical spacing between artifact sections */
+.artifact-detail-hero {
+  padding: 90px 0 35px;
+}
+
+.section {
+  padding: 58px 0;
+}
+
+.section-header {
+  margin-bottom: 26px;
+}
+
+.artifact-overview-card,
+.takeaways-card {
+  padding: 32px;
+}
+
+.artifact-overview-card h2 {
+  margin-bottom: 16px;
+}
+
+.artifact-overview-card p {
+  margin-bottom: 14px;
+}
+
+/* Reduce spacing inside grids/cards */
+.artifact-grid-3,
+.artifact-timeline,
+.analog-points {
+  gap: 18px;
+}
+
+.artifact-info-card,
+.timeline-card {
+  padding: 24px;
+}
