@@ -8,28 +8,28 @@
 
   <meta
     name="description"
-    content="A professional artifact comparing machine learning and deep learning across concepts, architecture, data requirements, compute needs, and practical applications."
+    content="A professional artifact comparing machine learning and deep learning across concepts, data requirements, compute needs, and hardware considerations."
   />
 
-  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header class="site-header">
     <nav class="nav-container">
-      <a href="../../index.html" class="logo">Shashank Sagar Mamidi</a>
+      <a href="index.html" class="logo">Shashank Sagar Mamidi</a>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
         ☰
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="../../index.html#about">About</a></li>
-        <li><a href="../../index.html#expertise">Expertise</a></li>
-        <li><a href="../../index.html#projects">Projects</a></li>
-        <li><a href="../../artifacts.html" class="active-link">Artifacts</a></li>
-        <li><a href="../../index.html#tools">Tools</a></li>
-        <li><a href="../../index.html#contact">Contact</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#expertise">Expertise</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="artifacts.html" class="active-link">Artifacts</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -44,13 +44,13 @@
         <h1>Comparative Analysis: Machine Learning vs Deep Learning</h1>
 
         <p class="page-description">
-          A structured comparison of machine learning and deep learning, focused on how each approach
-          differs in architecture, data dependency, feature engineering, compute requirements,
-          interpretability, and practical application.
+          A focused comparison of machine learning and deep learning, highlighting how both approaches
+          differ in data requirements, model complexity, feature engineering, compute needs,
+          interpretability, and practical hardware impact.
         </p>
 
         <div class="page-actions">
-          <a href="../../artifacts.html" class="btn btn-outline">Back to Artifacts</a>
+          <a href="artifacts.html" class="btn btn-outline">Back to Artifacts</a>
         </div>
       </div>
     </section>
@@ -63,26 +63,25 @@
         <h2>Purpose of the Artifact</h2>
 
         <p>
-          The objective of this artifact is to compare machine learning and deep learning in a clear,
-          practical, and technically meaningful way. While deep learning is a subset of machine
-          learning, the two approaches differ significantly in how they process data, learn patterns,
-          require computation, and solve real-world problems.
+          The purpose of this artifact is to clearly compare machine learning and deep learning in a
+          practical and easy-to-understand way. While deep learning is part of machine learning, the two
+          approaches differ in how they use data, how they learn patterns, how much computing power they
+          require, and where they are most useful.
         </p>
 
         <p>
-          This artifact is designed to demonstrate foundational understanding of AI/ML concepts while
-          connecting those concepts to hardware-aware thinking. For engineering applications, the
-          distinction between machine learning and deep learning is important because each approach
-          places different demands on data pipelines, compute platforms, memory, power, latency, and
-          deployment environments.
+          This artifact also connects the comparison to hardware considerations. As AI systems become
+          larger and more complex, the difference between machine learning and deep learning becomes
+          important for understanding compute demand, memory bandwidth, power efficiency, and deployment
+          constraints.
         </p>
       </div>
     </section>
 
-    <!-- Overview -->
+    <!-- Concept Overview -->
     <section class="section">
       <div class="section-header">
-        <p class="section-label">Conceptual Overview</p>
+        <p class="section-label">Concept Overview</p>
         <h2>Machine Learning and Deep Learning</h2>
       </div>
 
@@ -91,20 +90,19 @@
         <article class="artifact-info-card">
           <h3>Machine Learning</h3>
           <p>
-            Machine learning is a branch of artificial intelligence that enables systems to learn
-            patterns from data and make predictions or decisions without being explicitly programmed
-            for every rule. Traditional ML often depends on structured data, statistical techniques,
-            and human-guided feature engineering.
+            Machine learning is a branch of artificial intelligence where algorithms learn patterns
+            from data and use those patterns to make predictions or decisions. Traditional machine
+            learning often works well with structured data and usually depends on human-guided feature
+            selection.
           </p>
         </article>
 
         <article class="artifact-info-card">
           <h3>Deep Learning</h3>
           <p>
-            Deep learning is a specialized subset of machine learning based on artificial neural
-            networks with multiple layers. It is especially powerful for complex, high-dimensional
-            data such as images, speech, natural language, sensor streams, and large-scale pattern
-            recognition tasks.
+            Deep learning is a specialized subset of machine learning that uses multi-layer neural
+            networks to learn complex patterns. It is especially useful for images, speech, natural
+            language, sensor data, and other high-dimensional problems.
           </p>
         </article>
 
@@ -136,85 +134,69 @@
                 or decisions.
               </td>
               <td>
-                A subset of ML that uses multi-layer neural networks to learn complex representations
-                from large datasets.
+                A subset of machine learning that uses deep neural networks with multiple layers.
               </td>
             </tr>
 
             <tr>
-              <td>Data Requirement</td>
+              <td>Data Requirements</td>
               <td>
-                Can perform well with smaller or medium-sized datasets, depending on the problem and
-                feature quality.
+                Can perform well with smaller or medium-sized datasets when good features are available.
               </td>
               <td>
-                Usually requires large volumes of data to achieve strong performance and avoid
-                overfitting.
+                Usually requires large datasets to learn effectively and generalize well.
               </td>
             </tr>
 
             <tr>
               <td>Feature Engineering</td>
               <td>
-                Often relies on manually selected or engineered features based on domain knowledge.
+                Often requires manual feature selection or feature engineering using domain knowledge.
               </td>
               <td>
-                Learns features automatically through multiple neural network layers.
+                Learns features automatically through layers of the neural network.
               </td>
             </tr>
 
             <tr>
-              <td>Compute Requirement</td>
+              <td>Compute Needs</td>
               <td>
-                Typically less computationally intensive and can often run efficiently on CPUs.
+                Typically less compute-intensive and can often run efficiently on CPUs.
               </td>
               <td>
-                Computationally intensive and commonly accelerated using GPUs, TPUs, NPUs, or custom
-                AI hardware.
+                Requires more compute power and often depends on GPUs, TPUs, NPUs, or custom accelerators.
               </td>
             </tr>
 
             <tr>
               <td>Interpretability</td>
               <td>
-                Often more interpretable, especially with models such as decision trees, regression,
-                and simpler classifiers.
+                Often easier to interpret, especially with models like decision trees, regression,
+                or simpler classifiers.
               </td>
               <td>
-                Often less interpretable due to complex internal representations across many layers.
-              </td>
-            </tr>
-
-            <tr>
-              <td>Training Time</td>
-              <td>
-                Generally faster to train for many traditional models.
-              </td>
-              <td>
-                Training can be time-consuming, especially for large models and high-dimensional data.
+                Often harder to interpret because of complex learned representations across many layers.
               </td>
             </tr>
 
             <tr>
               <td>Best Use Cases</td>
               <td>
-                Structured data analysis, prediction, classification, anomaly detection, forecasting,
-                and tabular datasets.
+                Tabular data, forecasting, classification, anomaly detection, and structured datasets.
               </td>
               <td>
                 Computer vision, speech recognition, natural language processing, autonomous systems,
-                and large-scale perception tasks.
+                and large-scale pattern recognition.
               </td>
             </tr>
 
             <tr>
               <td>Hardware Impact</td>
               <td>
-                Often practical on general-purpose processors and moderate compute platforms.
+                Can often be deployed on general-purpose processors with moderate compute needs.
               </td>
               <td>
-                Drives demand for high-throughput compute, memory bandwidth, accelerators, and
-                energy-efficient silicon.
+                Drives demand for parallel compute, memory bandwidth, power efficiency, and specialized AI silicon.
               </td>
             </tr>
           </tbody>
@@ -230,22 +212,16 @@
         <h2>Process Used to Develop the Artifact</h2>
 
         <p>
-          The artifact was developed by first identifying the most important dimensions that separate
-          traditional machine learning from deep learning. These dimensions included data size, model
-          architecture, feature engineering, compute requirements, interpretability, deployment
-          constraints, and real-world use cases.
+          I developed this artifact by identifying the most important differences between machine
+          learning and deep learning, then organizing them into a clear comparison table. I focused on
+          criteria that are useful for both technical understanding and practical decision-making,
+          including data size, feature engineering, compute needs, interpretability, and use cases.
         </p>
 
         <p>
-          The comparison was then organized into a structured table so that the differences could be
-          evaluated clearly. The content was written to be accessible to a technical audience while
-          still maintaining relevance to hardware and semiconductor considerations.
-        </p>
-
-        <p>
-          A hardware-aware perspective was included because deep learning workloads have strongly
-          influenced the evolution of modern compute platforms, including GPUs, AI accelerators,
-          high-bandwidth memory, edge AI processors, and low-power inference engines.
+          I also added a hardware perspective because deep learning has had a major influence on modern
+          compute platforms. GPUs, AI accelerators, memory systems, and power-efficient edge devices
+          are all closely connected to the growth of deep learning workloads.
         </p>
       </div>
     </section>
@@ -262,24 +238,24 @@
         <article class="artifact-info-card">
           <h3>Compute Demand</h3>
           <p>
-            Traditional ML models can often run efficiently on CPUs, while deep learning models
-            require high-throughput parallel compute for training and large-scale inference.
+            Traditional machine learning can often run on CPUs, while deep learning typically requires
+            high-throughput parallel hardware for training and large-scale inference.
           </p>
         </article>
 
         <article class="artifact-info-card">
-          <h3>Memory Movement</h3>
+          <h3>Memory Bandwidth</h3>
           <p>
-            Deep learning workloads involve constant movement of weights, activations, and intermediate
-            data, making memory bandwidth and data locality critical hardware concerns.
+            Deep learning workloads require frequent movement of weights, activations, and intermediate
+            data, making memory bandwidth a major design consideration.
           </p>
         </article>
 
         <article class="artifact-info-card">
           <h3>Power Efficiency</h3>
           <p>
-            As AI moves to edge devices, hardware must support inference with low power consumption,
-            predictable latency, and efficient integration with sensors and mixed-signal circuits.
+            As deep learning moves into edge devices, hardware must support inference with low power,
+            predictable latency, and efficient integration with sensors and mixed-signal systems.
           </p>
         </article>
 
@@ -309,17 +285,16 @@
         <h2>Value of This Artifact</h2>
 
         <p>
-          This artifact provides a clear comparison between machine learning and deep learning while
-          connecting the topic to practical engineering considerations. It demonstrates the ability
-          to organize technical information, explain complex concepts clearly, and relate AI/ML
-          methods to hardware requirements.
+          This artifact is valuable because it explains the difference between machine learning and
+          deep learning in a structured and practical way. It helps show that model selection depends
+          not only on accuracy, but also on data availability, compute resources, interpretability,
+          power constraints, and deployment environment.
         </p>
 
         <p>
-          The artifact is valuable because it highlights why deep learning has influenced the design
-          of modern hardware systems. As AI workloads continue to grow, engineers must understand not
-          only the algorithmic differences between ML and DL, but also the system-level implications
-          for compute, memory, power, latency, and deployment.
+          The artifact also connects AI/ML concepts to hardware design, which is especially relevant
+          to semiconductor engineering. Understanding these differences helps explain why modern AI
+          systems require specialized hardware, efficient memory movement, and careful power management.
         </p>
       </div>
     </section>
@@ -332,24 +307,16 @@
         <h2>Reflection</h2>
 
         <p>
-          Creating this artifact helped reinforce the distinction between traditional machine learning
-          and deep learning. The most important insight is that deep learning is not simply a more
-          advanced version of machine learning; it is a specialized approach that changes the
-          requirements for data, computation, memory, power, and deployment.
+          Working on the <strong>“Comparative Analysis: Machine Learning vs Deep Learning”</strong>
+          artifact helped me understand the differences between the two in a more practical way. I
+          realized that it is not just about which model is more advanced, but also about the amount
+          of data available, the computing power needed, and where the model will actually be used.
         </p>
 
         <p>
-          From a hardware perspective, the comparison shows why deep learning has driven major changes
-          in semiconductor design and system architecture. The need for parallel computation, high
-          memory bandwidth, and energy-efficient inference has shaped the development of GPUs,
-          accelerators, edge AI platforms, and specialized silicon.
-        </p>
-
-        <p>
-          This artifact also strengthened the connection between AI/ML concepts and analog/mixed-signal
-          design. Real-world AI systems depend on reliable power delivery, sensing, data conversion,
-          clocking, interfaces, and silicon validation. Understanding this connection is important for
-          evaluating how AI systems operate beyond software alone.
+          I also connected the topic back to my hardware background, especially how deep learning
+          depends on GPUs, accelerators, memory bandwidth, and power efficiency. That made the artifact
+          more relevant to me and helped me see how AI/ML connects directly to semiconductor design.
         </p>
       </div>
     </section>
@@ -364,33 +331,28 @@
       <div class="takeaways-card">
         <ul>
           <li>
-            Deep learning is a subset of machine learning, but it differs significantly in architecture,
-            data requirements, and compute intensity.
+            Deep learning is a subset of machine learning, but it has different requirements for data,
+            computation, and deployment.
           </li>
 
           <li>
-            Traditional machine learning often relies on feature engineering, while deep learning can
-            learn features automatically from raw or high-dimensional data.
+            Machine learning often relies on feature engineering, while deep learning can learn features
+            automatically from raw or complex data.
           </li>
 
           <li>
-            Machine learning can often run efficiently on general-purpose processors, while deep
-            learning commonly requires GPUs, TPUs, NPUs, or custom accelerators.
+            Traditional machine learning can often run efficiently on CPUs, while deep learning commonly
+            benefits from GPUs, TPUs, NPUs, or custom accelerators.
           </li>
 
           <li>
-            Deep learning has accelerated demand for high-bandwidth memory, parallel compute,
-            optimized data movement, and energy-efficient silicon.
+            Deep learning has increased the importance of memory bandwidth, parallel compute, energy
+            efficiency, and specialized silicon.
           </li>
 
           <li>
-            Hardware selection depends on the workload, data size, latency requirements, power budget,
-            and deployment environment.
-          </li>
-
-          <li>
-            Analog and mixed-signal circuits remain important in AI systems through power management,
-            sensing, clocking, interfaces, data conversion, and reliability support.
+            Hardware selection depends on workload size, latency needs, power budget, and deployment
+            environment.
           </li>
         </ul>
       </div>
@@ -402,6 +364,6 @@
     <p>© 2025 Shashank Sagar Mamidi. Senior Analog Design Engineer.</p>
   </footer>
 
-  <script src="../../script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
