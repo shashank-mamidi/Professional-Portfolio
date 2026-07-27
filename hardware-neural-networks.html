@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Neural Network-Based Gait Control for a Four-Legged Robot | Shashank Sagar Mamidi</title>
+
+  <meta
+    name="description"
+    content="A professional artifact exploring how synaptic weights in neural-network-inspired hardware can control gait behavior in a four-legged robot."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">Shashank Sagar Mamidi</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#expertise">Expertise</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="artifacts.html" class="active-link">Artifacts</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Artifact Hero -->
+    <section class="artifact-detail-hero">
+      <div class="artifact-detail-inner">
+        <p class="intro-label">Professional Artifact</p>
+
+        <h1>Neural Network-Based Gait Control for a Four-Legged Robot</h1>
+
+        <p class="page-description">
+          A technical artifact exploring how synaptic weights in a neural-network-inspired control
+          system can shape the movement pattern of a four-legged robot. In this model, the synapses
+          influence timing, coordination, phase relationships, and gait behavior across the robot’s legs.
+        </p>
+
+        <div class="page-actions">
+          <a href="artifacts.html" class="btn btn-outline">Back to Artifacts</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objective -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Objective</p>
+
+        <h2>Purpose of the Artifact</h2>
+
+        <p>
+          The purpose of this artifact is to explain how a neural-network-inspired control system can
+          influence the gait of a four-legged robot. Instead of treating the robot’s walking pattern as
+          a fixed sequence, this artifact looks at gait as an output of weighted connections between
+          control nodes.
+        </p>
+
+        <p>
+          In this model, synapses represent the weighted relationships between leg-control signals.
+          By changing those weights, the robot can shift how its legs coordinate with each other,
+          producing different movement patterns such as walking, trotting, pacing, turning, or stabilizing.
+        </p>
+
+        <p>
+          This artifact connects neural network concepts to real hardware implementation. It also relates
+          to embedded systems, sensor feedback, motor control, timing circuits, power delivery, and
+          analog/mixed-signal design considerations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Overview</p>
+
+        <h2>Four-Legged Robot Gait Control</h2>
+
+        <p>
+          A four-legged robot, also called a quadruped robot, must coordinate four legs in a stable and
+          controlled way. Each leg has to move with the correct timing, direction, and force relative to
+          the other legs. If the timing is incorrect, the robot may become unstable, inefficient, or unable
+          to move smoothly.
+        </p>
+
+        <p>
+          Traditional gait control can be designed using fixed timing rules. However, neural-network-based
+          control provides a more flexible way to represent movement. In this approach, each leg can be
+          represented by a control signal, and the relationship between leg signals can be shaped by
+          synaptic weights.
+        </p>
+
+        <p>
+          The key idea is that the synapses dictate how the gait looks. Stronger or weaker connections
+          between leg-control nodes can change the timing, phase, and coordination of the robot’s movement.
+          This makes the gait an emergent behavior of the network instead of only a manually programmed
+          sequence.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gait Concept -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Gait Concept</p>
+        <h2>How Synapses Influence Gait</h2>
+      </div>
+
+      <div class="artifact-grid-3">
+
+        <article class="artifact-info-card">
+          <h3>Leg Control Nodes</h3>
+          <p>
+            Each leg can be represented by a control node: front-left, front-right, rear-left, and
+            rear-right. These nodes generate or influence movement commands for each leg.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Synaptic Weights</h3>
+          <p>
+            Synaptic weights define how strongly one leg-control node influences another. These weights
+            affect timing, phase delay, movement strength, and coordination.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Gait Output</h3>
+          <p>
+            The final gait is the visible movement pattern created by the interaction of all leg-control
+            signals. Changing the weights changes how the robot walks.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Gait Patterns -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Movement Patterns</p>
+        <h2>Example Gaits from Synaptic Coordination</h2>
+      </div>
+
+      <div class="artifact-timeline">
+
+        <article class="timeline-card year-timeline-card">
+          <span>Walk</span>
+          <div>
+            <h3>Sequential Leg Movement</h3>
+            <p>
+              A walking gait moves one leg at a time in a stable sequence. This type of gait prioritizes
+              balance and control over speed.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card year-timeline-card">
+          <span>Trot</span>
+          <div>
+            <h3>Diagonal Pair Movement</h3>
+            <p>
+              A trot moves diagonal leg pairs together, such as front-left with rear-right and front-right
+              with rear-left. This gait is efficient and commonly used for faster movement.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card year-timeline-card">
+          <span>Pace</span>
+          <div>
+            <h3>Same-Side Pair Movement</h3>
+            <p>
+              A pacing gait moves legs on the same side together. This requires careful control of balance
+              because weight shifts differently than in a trot.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card year-timeline-card">
+          <span>Bound</span>
+          <div>
+            <h3>Front and Rear Pair Movement</h3>
+            <p>
+              A bounding gait moves the front legs and rear legs in pairs. This gait can support fast
+              movement but requires strong timing and power control.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card year-timeline-card">
+          <span>Turn</span>
+          <div>
+            <h3>Asymmetric Leg Timing</h3>
+            <p>
+              Turning can be created by adjusting synaptic weights so the legs on one side move differently
+              from the legs on the other side.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card year-timeline-card">
+          <span>Adapt</span>
+          <div>
+            <h3>Feedback-Based Adjustment</h3>
+            <p>
+              Sensor feedback can adjust the network response when the robot encounters uneven ground,
+              slip, load changes, or external disturbances.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Control Architecture</p>
+
+        <h2>Neural Network Control Model</h2>
+
+        <p>
+          A simplified neural control architecture for a quadruped robot can include four leg-control
+          nodes, weighted synaptic connections between those nodes, sensor feedback paths, and motor
+          command outputs. Each control node contributes to the movement of one leg, while the synapses
+          define how the legs coordinate with each other.
+        </p>
+
+        <p>
+          In hardware, this type of network can be implemented using digital logic, embedded processors,
+          FPGA fabric, neural accelerators, or custom ASIC blocks. The synaptic weights can be stored in
+          memory and used during real-time control to compute the next movement command.
+        </p>
+
+        <p>
+          The control loop must operate with low latency because gait control is a real-time problem.
+          The robot needs to sense, compute, and respond quickly enough to maintain balance and produce
+          smooth motion.
+        </p>
+
+        <div class="analog-points">
+          <div>
+            <h3>Inputs</h3>
+            <p>
+              Joint position, motor current, inertial measurements, foot contact, body orientation,
+              and environmental feedback.
+            </p>
+          </div>
+
+          <div>
+            <h3>Neural Control</h3>
+            <p>
+              Weighted connections define coordination between leg-control nodes and influence the
+              resulting gait pattern.
+            </p>
+          </div>
+
+          <div>
+            <h3>Outputs</h3>
+            <p>
+              Motor commands, timing signals, torque references, phase adjustments, and leg trajectory
+              updates.
+            </p>
+          </div>
+
+          <div>
+            <h3>Feedback</h3>
+            <p>
+              Sensor feedback can adjust the gait in real time when the robot experiences imbalance,
+              terrain changes, or disturbances.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hardware Implementation -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Hardware Implementation</p>
+        <h2>How the Network Can Be Implemented in Hardware</h2>
+      </div>
+
+      <div class="artifact-grid-3">
+
+        <article class="artifact-info-card">
+          <h3>Weight Storage</h3>
+          <p>
+            Synaptic weights can be stored in memory, registers, SRAM, nonvolatile memory, or programmable
+            configuration blocks.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>MAC Operations</h3>
+          <p>
+            Weighted signals can be computed using multiply-accumulate operations, where inputs are
+            multiplied by synaptic weights and summed.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Timing Generator</h3>
+          <p>
+            Timing logic controls the phase relationship between legs and helps generate smooth cyclic
+            motion.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Sensor Interface</h3>
+          <p>
+            Sensor data must be captured, conditioned, digitized, and processed so the robot can respond
+            to its environment.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Motor Control</h3>
+          <p>
+            The network output must be translated into motor commands that drive actuators for each leg.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Embedded Processor</h3>
+          <p>
+            A microcontroller, FPGA, ASIC, or edge AI processor can execute the gait-control algorithm
+            in real time.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Process</p>
+
+        <h2>Process Used to Develop the Artifact</h2>
+
+        <p>
+          I developed this artifact by starting with the physical behavior of a four-legged robot. The
+          first step was identifying that gait depends on coordination between the front-left, front-right,
+          rear-left, and rear-right legs.
+        </p>
+
+        <p>
+          I then connected that movement problem to neural network behavior. In this model, each leg is
+          represented by a control node, and the synaptic weights between nodes influence how the legs
+          move relative to one another.
+        </p>
+
+        <p>
+          Finally, I connected the neural control concept to hardware implementation. I considered how
+          weights could be stored, how weighted signals could be computed, how sensors could provide
+          feedback, and how motor commands could be generated in real time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Analog and Mixed-Signal Perspective -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Analog Design Perspective</p>
+
+        <h2>Relevance to Analog and Mixed-Signal IC Design</h2>
+
+        <p>
+          Although gait control can be described as a neural network problem, a real four-legged robot
+          depends heavily on analog and mixed-signal hardware. The robot must sense the physical world,
+          convert sensor data, regulate power, drive motors, and maintain reliable timing.
+        </p>
+
+        <p>
+          Analog and mixed-signal circuits are important because the robot’s control loop depends on
+          accurate measurements and stable hardware behavior. If sensor readings are noisy, power rails
+          are unstable, or timing is unreliable, the gait can become unstable.
+        </p>
+
+        <div class="analog-points">
+          <div>
+            <h3>Power Management</h3>
+            <p>
+              Motor loads can change quickly, requiring stable regulators, current monitoring, and robust
+              transient response.
+            </p>
+          </div>
+
+          <div>
+            <h3>Sensor Interfaces</h3>
+            <p>
+              IMUs, force sensors, joint sensors, and current sensors require analog front ends and
+              signal-conditioning circuits.
+            </p>
+          </div>
+
+          <div>
+            <h3>Data Conversion</h3>
+            <p>
+              ADCs convert physical sensor signals into digital information used by the gait-control
+              network.
+            </p>
+          </div>
+
+          <div>
+            <h3>Clocking and Timing</h3>
+            <p>
+              Reliable timing is required to coordinate leg movement, motor updates, sensor sampling,
+              and control-loop execution.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Used -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Tools Used</p>
+        <h2>Tools Used</h2>
+      </div>
+
+      <div class="simple-tools-list">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>ChatGPT</span>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Value Proposition</p>
+
+        <h2>Value of This Artifact</h2>
+
+        <p>
+          This artifact is valuable because it shows how neural network concepts can be connected to a
+          physical hardware system. Instead of explaining neural networks only as software models, it
+          shows how weighted connections can influence the visible behavior of a robot.
+        </p>
+
+        <p>
+          The artifact also demonstrates how hardware choices affect real-time robotic control. Gait
+          behavior depends not only on the neural control algorithm, but also on sensor accuracy, timing,
+          memory access, motor control, power delivery, and low-latency embedded computation.
+        </p>
+
+        <p>
+          This topic is especially relevant to semiconductor and mixed-signal design because real robotic
+          systems depend on analog sensing, data conversion, power management, clocking, and reliable
+          silicon operation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Reflection</p>
+
+        <h2>Reflection</h2>
+
+        <p>
+          Working on this artifact helped me think about neural networks in a more physical way. The
+          idea that synaptic weights can shape how a four-legged robot walks made the concept feel more
+          concrete than just looking at a neural network as equations or software.
+        </p>
+
+        <p>
+          I also connected the topic back to my hardware background. A robot’s gait is not controlled by
+          software alone; it depends on sensors, timing, motor control, power delivery, and reliable
+          embedded hardware. That connection made the artifact more meaningful to me.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Summary</p>
+        <h2>Key Takeaways</h2>
+      </div>
+
+      <div class="takeaways-card">
+        <ul>
+          <li>
+            A four-legged robot’s gait depends on coordinated timing between all four legs.
+          </li>
+
+          <li>
+            Synaptic weights can represent the strength and timing relationship between leg-control
+            signals.
+          </li>
+
+          <li>
+            Changing synaptic weights can produce different gaits such as walking, trotting, pacing,
+            turning, or adapting to terrain.
+          </li>
+
+          <li>
+            Hardware implementation requires weight storage, computation, sensor feedback, timing logic,
+            and motor control.
+          </li>
+
+          <li>
+            Real-time gait control depends on low latency, stable power, accurate sensing, and reliable
+            embedded hardware.
+          </li>
+
+          <li>
+            Analog and mixed-signal circuits are important for sensor interfaces, power management,
+            data conversion, timing, and motor-control support.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Shashank Sagar Mamidi. Senior Analog Design Engineer.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
