@@ -1,0 +1,151 @@
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
+
+/* Interactive Sensor-to-AI Pipeline */
+
+const pipelineSteps = document.querySelectorAll(".pipeline-step");
+
+const pipelineData = {
+  "physical-event": {
+    stage: "Stage 01",
+    title: "Physical Event",
+    description:
+      "A real-world event produces a measurable quantity such as vibration, pressure, temperature, sound, light, or motion.",
+    function:
+      "The system encounters the physical condition that needs to be measured or classified.",
+    uncertainty:
+      "Different physical conditions may produce similar observable signals, making the original event difficult to distinguish.",
+    focus:
+      "Define measurable characteristics and the operating conditions under which the system must perform."
+  },
+
+  sensor: {
+    stage: "Stage 02",
+    title: "Sensor",
+    description:
+      "The sensor converts the physical event into an electrical signal that can be processed by the rest of the system.",
+    function:
+      "The sensor captures information from the physical environment and produces a voltage, current, frequency, or other electrical representation.",
+    uncertainty:
+      "Noise, drift, sensitivity variation, saturation, temperature effects, and device mismatch can alter the signal.",
+    focus:
+      "Sensitivity, dynamic range, calibration, signal-to-noise ratio, environmental robustness, and repeatability."
+  },
+
+  afe: {
+    stage: "Stage 03",
+    title: "Analog Front End",
+    description:
+      "The analog front end conditions the sensor signal before it is converted into digital data.",
+    function:
+      "Amplifiers, filters, bias circuits, references, and protection circuits prepare the signal for accurate conversion.",
+    uncertainty:
+      "Offset, gain error, distortion, insufficient bandwidth, clipping, filtering errors, and power-supply interference can corrupt the signal.",
+    focus:
+      "Noise, linearity, bandwidth, gain accuracy, stability, dynamic range, power, and layout-aware implementation."
+  },
+
+  adc: {
+    stage: "Stage 04",
+    title: "Analog-to-Digital Conversion",
+    description:
+      "The ADC samples and quantizes the conditioned analog signal into a digital representation.",
+    function:
+      "The converter translates a continuous-time analog signal into discrete digital values that the processing system can use.",
+    uncertainty:
+      "Quantization noise, aliasing, insufficient resolution, reference errors, sampling uncertainty, and nonlinearity can remove useful information.",
+    focus:
+      "Resolution, sampling rate, ENOB, linearity, reference quality, input bandwidth, power, and conversion accuracy."
+  },
+
+  processing: {
+    stage: "Stage 05",
+    title: "Digital Processing",
+    description:
+      "Digital logic prepares the converted signal for inference through filtering, normalization, compression, or feature extraction.",
+    function:
+      "The system formats and transforms raw digital data into a representation suitable for the AI/ML model.",
+    uncertainty:
+      "Incorrect preprocessing, feature loss, scaling errors, synchronization problems, or insufficient precision can change the model input.",
+    focus:
+      "Data integrity, latency, memory movement, numerical precision, synchronization, and computational efficiency."
+  },
+
+  model: {
+    stage: "Stage 06",
+    title: "AI/ML Model",
+    description:
+      "The AI/ML model analyzes processed data and estimates a class, condition, prediction, or confidence level.",
+    function:
+      "The model identifies patterns in the input and maps them to a learned output based on its training.",
+    uncertainty:
+      "Overfitting, biased data, ambiguous classes, out-of-distribution inputs, and model approximation can produce incorrect results.",
+    focus:
+      "Generalization, confidence estimation, robustness, model size, quantization, latency, and validation coverage."
+  },
+
+  decision: {
+    stage: "Stage 07",
+    title: "System Decision",
+    description:
+      "The final output becomes a decision, alert, control command, or classification result.",
+    function:
+      "The system uses the model output to determine what action should be taken or what condition should be reported.",
+    uncertainty:
+      "False positives, false negatives, low-confidence outputs, incorrect thresholds, or delayed responses can affect system behavior.",
+    focus:
+      "Decision thresholds, safety margins, response time, explainability, fault handling, and system-level validation."
+  }
+};
+
+function updatePipelineDetails(stageName) {
+  const data = pipelineData[stageName];
+
+  if (!data) {
+    return;
+  }
+
+  const detailKicker = document.getElementById("detailKicker");
+  const detailTitle = document.getElementById("detailTitle");
+  const detailDescription = document.getElementById("detailDescription");
+  const detailFunction = document.getElementById("detailFunction");
+  const detailUncertainty = document.getElementById("detailUncertainty");
+  const detailFocus = document.getElementById("detailFocus");
+
+  if (
+    !detailKicker ||
+    !detailTitle ||
+    !detailDescription ||
+    !detailFunction ||
+    !detailUncertainty ||
+    !detailFocus
+  ) {
+    return;
+  }
+
+  detailKicker.textContent = data.stage;
+  detailTitle.textContent = data.title;
+  detailDescription.textContent = data.description;
+  detailFunction.textContent = data.function;
+  detailUncertainty.textContent = data.uncertainty;
+  detailFocus.textContent = data.focus;
+
+  pipelineSteps.forEach((step) => {
+    const isActive = step.dataset.stage === stageName;
+
+    step.classList.toggle("active", isActive);
+    step.setAttribute("aria-selected", isActive ? "true" : "false");
+  });
+}
+
+pipelineSteps.forEach((step) => {
+  step.addEventListener("click", () => {
+    updatePipelineDetails(step.dataset.stage);
+  });
+});
