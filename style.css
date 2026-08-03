@@ -1041,3 +1041,49 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* =========================================================
+   Artifact Button Fix
+   ========================================================= */
+
+.artifact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.artifact-card > div {
+  width: 100%;
+}
+
+.artifact-card .artifact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 24px;
+  padding: 11px 17px;
+  border-radius: 12px;
+  background: var(--gradient);
+  color: #06111f;
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.artifact-card .artifact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(56, 189, 248, 0.25);
+}
+
+/* Prevent very long button labels from overflowing on small screens */
+@media (max-width: 520px) {
+  .artifact-card .artifact-button {
+    white-space: normal;
+    text-align: center;
+  }
+}
