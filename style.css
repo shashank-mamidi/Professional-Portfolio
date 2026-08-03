@@ -804,3 +804,240 @@ footer {
     min-width: 760px;
   }
 }
+/* =========================================================
+   AI/ML Uncertainty Artifact
+   ========================================================= */
+
+.section-intro {
+  max-width: 760px;
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+/* Pipeline container */
+.pipeline-container {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: linear-gradient(145deg, var(--surface), var(--surface-soft));
+  box-shadow: var(--shadow);
+}
+
+.pipeline-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 20px;
+}
+
+.pipeline-step {
+  flex: 1 0 142px;
+  min-height: 142px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(148, 163, 184, 0.06);
+  color: var(--muted);
+  cursor: pointer;
+  text-align: left;
+  transition: 0.25s ease;
+}
+
+.pipeline-step:hover {
+  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.55);
+  color: var(--text);
+}
+
+.pipeline-step.active {
+  border-color: transparent;
+  background: var(--gradient);
+  color: #06111f;
+  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.18);
+}
+
+.pipeline-number {
+  font-size: 0.72rem;
+  font-weight: 900;
+  opacity: 0.75;
+}
+
+.pipeline-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.pipeline-step strong {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.pipeline-step small {
+  font-size: 0.74rem;
+  line-height: 1.3;
+  opacity: 0.78;
+}
+
+.pipeline-arrow {
+  align-self: center;
+  flex: 0 0 auto;
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.pipeline-detail {
+  margin-top: 22px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(148, 163, 184, 0.07);
+}
+
+.pipeline-detail-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.detail-kicker {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.pipeline-detail h3 {
+  color: var(--accent);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.pipeline-detail > p {
+  max-width: 900px;
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
+.pipeline-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.pipeline-detail-grid > div {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.pipeline-detail-grid h4 {
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.pipeline-detail-grid p {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Expanded uncertainty timeline */
+.artifact-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.timeline-card {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 18px;
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: linear-gradient(145deg, var(--surface), var(--surface-soft));
+  box-shadow: var(--shadow);
+  transition: 0.25s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.45);
+}
+
+.timeline-card > span {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #06111f;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.timeline-card h3 {
+  margin-bottom: 8px;
+  color: var(--accent);
+  line-height: 1.25;
+}
+
+.timeline-card p {
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.timeline-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive layout */
+@media (max-width: 980px) {
+  .pipeline-flow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow-x: visible;
+  }
+
+  .pipeline-arrow {
+    display: none;
+  }
+
+  .pipeline-detail-grid,
+  .artifact-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .pipeline-container {
+    padding: 20px;
+  }
+
+  .pipeline-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline-step {
+    min-height: auto;
+  }
+
+  .pipeline-detail {
+    padding: 22px;
+  }
+
+  .timeline-card {
+    grid-template-columns: 1fr;
+  }
+}
