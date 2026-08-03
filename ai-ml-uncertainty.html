@@ -1,151 +1,851 @@
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-}
+  <title>
+    From Signal Noise to Model Error: Understanding AI/ML Uncertainty |
+    Shashank Sagar Mamidi
+  </title>
 
-/* Interactive Sensor-to-AI Pipeline */
+  <meta
+    name="description"
+    content="A professional artifact exploring uncertainty in AI/ML systems, from sensor noise and mixed-signal limitations to classification errors."
+  />
 
-const pipelineSteps = document.querySelectorAll(".pipeline-step");
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-const pipelineData = {
-  "physical-event": {
-    stage: "Stage 01",
-    title: "Physical Event",
-    description:
-      "A real-world event produces a measurable quantity such as vibration, pressure, temperature, sound, light, or motion.",
-    function:
-      "The system encounters the physical condition that needs to be measured or classified.",
-    uncertainty:
-      "Different physical conditions may produce similar observable signals, making the original event difficult to distinguish.",
-    focus:
-      "Define measurable characteristics and the operating conditions under which the system must perform."
-  },
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">Shashank Sagar Mamidi</a>
 
-  sensor: {
-    stage: "Stage 02",
-    title: "Sensor",
-    description:
-      "The sensor converts the physical event into an electrical signal that can be processed by the rest of the system.",
-    function:
-      "The sensor captures information from the physical environment and produces a voltage, current, frequency, or other electrical representation.",
-    uncertainty:
-      "Noise, drift, sensitivity variation, saturation, temperature effects, and device mismatch can alter the signal.",
-    focus:
-      "Sensitivity, dynamic range, calibration, signal-to-noise ratio, environmental robustness, and repeatability."
-  },
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
 
-  afe: {
-    stage: "Stage 03",
-    title: "Analog Front End",
-    description:
-      "The analog front end conditions the sensor signal before it is converted into digital data.",
-    function:
-      "Amplifiers, filters, bias circuits, references, and protection circuits prepare the signal for accurate conversion.",
-    uncertainty:
-      "Offset, gain error, distortion, insufficient bandwidth, clipping, filtering errors, and power-supply interference can corrupt the signal.",
-    focus:
-      "Noise, linearity, bandwidth, gain accuracy, stability, dynamic range, power, and layout-aware implementation."
-  },
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#expertise">Expertise</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li>
+          <a href="artifacts.html" class="active-link">Artifacts</a>
+        </li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  adc: {
-    stage: "Stage 04",
-    title: "Analog-to-Digital Conversion",
-    description:
-      "The ADC samples and quantizes the conditioned analog signal into a digital representation.",
-    function:
-      "The converter translates a continuous-time analog signal into discrete digital values that the processing system can use.",
-    uncertainty:
-      "Quantization noise, aliasing, insufficient resolution, reference errors, sampling uncertainty, and nonlinearity can remove useful information.",
-    focus:
-      "Resolution, sampling rate, ENOB, linearity, reference quality, input bandwidth, power, and conversion accuracy."
-  },
+  <main>
 
-  processing: {
-    stage: "Stage 05",
-    title: "Digital Processing",
-    description:
-      "Digital logic prepares the converted signal for inference through filtering, normalization, compression, or feature extraction.",
-    function:
-      "The system formats and transforms raw digital data into a representation suitable for the AI/ML model.",
-    uncertainty:
-      "Incorrect preprocessing, feature loss, scaling errors, synchronization problems, or insufficient precision can change the model input.",
-    focus:
-      "Data integrity, latency, memory movement, numerical precision, synchronization, and computational efficiency."
-  },
+    <!-- Artifact Hero -->
+    <section class="artifact-detail-hero">
+      <div class="artifact-detail-inner">
+        <p class="intro-label">Professional Artifact</p>
 
-  model: {
-    stage: "Stage 06",
-    title: "AI/ML Model",
-    description:
-      "The AI/ML model analyzes processed data and estimates a class, condition, prediction, or confidence level.",
-    function:
-      "The model identifies patterns in the input and maps them to a learned output based on its training.",
-    uncertainty:
-      "Overfitting, biased data, ambiguous classes, out-of-distribution inputs, and model approximation can produce incorrect results.",
-    focus:
-      "Generalization, confidence estimation, robustness, model size, quantization, latency, and validation coverage."
-  },
+        <h1>From Signal Noise to Model Error: Understanding AI/ML Uncertainty</h1>
 
-  decision: {
-    stage: "Stage 07",
-    title: "System Decision",
-    description:
-      "The final output becomes a decision, alert, control command, or classification result.",
-    function:
-      "The system uses the model output to determine what action should be taken or what condition should be reported.",
-    uncertainty:
-      "False positives, false negatives, low-confidence outputs, incorrect thresholds, or delayed responses can affect system behavior.",
-    focus:
-      "Decision thresholds, safety margins, response time, explainability, fault handling, and system-level validation."
-  }
-};
+        <p class="page-description">
+          A technical artifact exploring how noisy signals, ambiguous data, sensor limitations,
+          analog front-end errors, data-conversion issues, model behavior, and hardware constraints
+          can affect AI/ML decisions.
+        </p>
 
-function updatePipelineDetails(stageName) {
-  const data = pipelineData[stageName];
+        <div class="page-actions">
+          <a href="artifacts.html" class="btn btn-outline">
+            Back to Artifacts
+          </a>
+        </div>
+      </div>
+    </section>
 
-  if (!data) {
-    return;
-  }
+    <!-- Objective -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Objective</p>
 
-  const detailKicker = document.getElementById("detailKicker");
-  const detailTitle = document.getElementById("detailTitle");
-  const detailDescription = document.getElementById("detailDescription");
-  const detailFunction = document.getElementById("detailFunction");
-  const detailUncertainty = document.getElementById("detailUncertainty");
-  const detailFocus = document.getElementById("detailFocus");
+        <h2>Purpose of the Artifact</h2>
 
-  if (
-    !detailKicker ||
-    !detailTitle ||
-    !detailDescription ||
-    !detailFunction ||
-    !detailUncertainty ||
-    !detailFocus
-  ) {
-    return;
-  }
+        <p>
+          The purpose of this artifact is to examine why AI/ML systems sometimes produce uncertain,
+          incorrect, or inconsistent decisions. The term “confusion” is treated here as a technical
+          problem involving ambiguous inputs, noisy data, classification errors, model limitations,
+          and uncertainty in the final output.
+        </p>
 
-  detailKicker.textContent = data.stage;
-  detailTitle.textContent = data.title;
-  detailDescription.textContent = data.description;
-  detailFunction.textContent = data.function;
-  detailUncertainty.textContent = data.uncertainty;
-  detailFocus.textContent = data.focus;
+        <p>
+          This artifact follows uncertainty through the complete signal path, from a physical event
+          and sensor output to analog conditioning, data conversion, digital processing, and AI/ML
+          inference.
+        </p>
 
-  pipelineSteps.forEach((step) => {
-    const isActive = step.dataset.stage === stageName;
+        <p>
+          It also connects AI/ML reliability to mixed-signal design by examining how noise, offset,
+          distortion, limited dynamic range, quantization, sampling, and power-supply quality can
+          influence the information presented to a model.
+        </p>
+      </div>
+    </section>
 
-    step.classList.toggle("active", isActive);
-    step.setAttribute("aria-selected", isActive ? "true" : "false");
-  });
-}
+    <!-- Overview -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Overview</p>
 
-pipelineSteps.forEach((step) => {
-  step.addEventListener("click", () => {
-    updatePipelineDetails(step.dataset.stage);
-  });
-});
+        <h2>What Does “Confusion” Mean in AI/ML?</h2>
+
+        <p>
+          An AI/ML system becomes confused when the available information does not clearly support
+          one decision. This can happen because two classes share similar features, the input is
+          noisy, the training data is incomplete, or the system encounters a condition that was not
+          represented during training.
+        </p>
+
+        <p>
+          Confusion can occur at different levels. The data may be unclear, the model may be unable
+          to separate two classes, or the hardware may distort the signal before it reaches the model.
+          These effects can combine and make it difficult to identify the original physical event.
+        </p>
+
+        <p>
+          A reliable AI/ML system therefore requires more than a high-performing model. It also
+          requires a reliable sensor, a carefully designed signal chain, accurate data conversion,
+          appropriate validation, and hardware that operates consistently under real-world conditions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Pipeline -->
+    <section class="section pipeline-section">
+      <div class="section-header">
+        <p class="section-label">Interactive System View</p>
+
+        <h2>Complete Sensor-to-AI Decision Pipeline</h2>
+
+        <p class="section-intro">
+          Select a stage to understand how information moves through the system and where uncertainty
+          can be introduced.
+        </p>
+      </div>
+
+      <div class="pipeline-container">
+        <div
+          class="pipeline-flow"
+          role="tablist"
+          aria-label="Sensor-to-AI pipeline stages"
+        >
+
+          <button
+            class="pipeline-step active"
+            type="button"
+            data-stage="physical-event"
+            role="tab"
+            aria-selected="true"
+          >
+            <span class="pipeline-number">01</span>
+            <span class="pipeline-icon">◉</span>
+            <strong>Physical Event</strong>
+            <small>Real-world input</small>
+          </button>
+
+          <span class="pipeline-arrow" aria-hidden="true">→</span>
+
+          <button
+            class="pipeline-step"
+            type="button"
+            data-stage="sensor"
+            role="tab"
+            aria-selected="false"
+          >
+            <span class="pipeline-number">02</span>
+            <span class="pipeline-icon">⌁</span>
+            <strong>Sensor</strong>
+            <small>Signal generation</small>
+          </button>
+
+          <span class="pipeline-arrow" aria-hidden="true">→</span>
+
+          <button
+            class="pipeline-step"
+            type="button"
+            data-stage="afe"
+            role="tab"
+            aria-selected="false"
+          >
+            <span class="pipeline-number">03</span>
+            <span class="pipeline-icon">∿</span>
+            <strong>Analog Front End</strong>
+            <small>Signal conditioning</small>
+          </button>
+
+          <span class="pipeline-arrow" aria-hidden="true">→</span>
+
+          <button
+            class="pipeline-step"
+            type="button"
+            data-stage="adc"
+            role="tab"
+            aria-selected="false"
+          >
+            <span class="pipeline-number">04</span>
+            <span class="pipeline-icon">⇄</span>
+            <strong>ADC</strong>
+            <small>Data conversion</small>
+          </button>
+
+          <span class="pipeline-arrow" aria-hidden="true">→</span>
+
+          <button
+            class="pipeline-step"
+            type="button"
+            data-stage="processing"
+            role="tab"
+            aria-selected="false"
+          >
+            <span class="pipeline-number">05</span>
+            <span class="pipeline-icon">⚙</span>
+            <strong>Digital Processing</strong>
+            <small>Feature preparation</small>
+          </button>
+
+          <span class="pipeline-arrow" aria-hidden="true">→</span>
+
+          <button
+            class="pipeline-step"
+            type="button"
+            data-stage="model"
+            role="tab"
+            aria-selected="false"
+          >
+            <span class="pipeline-number">06</span>
+            <span class="pipeline-icon">✦</span>
+            <strong>AI/ML Model</strong>
+            <small>Inference</small>
+          </button>
+
+          <span class="pipeline-arrow" aria-hidden="true">→</span>
+
+          <button
+            class="pipeline-step"
+            type="button"
+            data-stage="decision"
+            role="tab"
+            aria-selected="false"
+          >
+            <span class="pipeline-number">07</span>
+            <span class="pipeline-icon">✓</span>
+            <strong>Decision</strong>
+            <small>System output</small>
+          </button>
+
+        </div>
+
+        <div
+          class="pipeline-detail"
+          id="pipelineDetail"
+          role="tabpanel"
+        >
+          <div class="pipeline-detail-heading">
+            <span class="detail-kicker" id="detailKicker">
+              Stage 01
+            </span>
+
+            <h3 id="detailTitle">Physical Event</h3>
+          </div>
+
+          <p id="detailDescription">
+            A real-world event produces a measurable quantity such as vibration,
+            pressure, temperature, sound, light, or motion.
+          </p>
+
+          <div class="pipeline-detail-grid">
+            <div>
+              <h4>What happens here?</h4>
+              <p id="detailFunction">
+                The system encounters the physical condition that needs to be
+                measured or classified.
+              </p>
+            </div>
+
+            <div>
+              <h4>Possible uncertainty</h4>
+              <p id="detailUncertainty">
+                Different physical conditions may produce similar observable signals.
+              </p>
+            </div>
+
+            <div>
+              <h4>Design focus</h4>
+              <p id="detailFocus">
+                Define measurable characteristics and operating conditions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sources of Uncertainty -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Sources of Uncertainty</p>
+
+        <h2>Where Confusion Can Enter the System</h2>
+      </div>
+
+      <div class="artifact-overview-card">
+        <p>
+          Confusion can enter an AI/ML system at almost any stage of the signal and decision path.
+          A model may appear to make a classification error, but the original cause may be a noisy
+          sensor, an inaccurate analog front end, insufficient data conversion, incomplete training
+          data, or limitations in the model itself.
+        </p>
+
+        <p>
+          Improving the model alone may not solve the problem. The complete system must be examined
+          from the physical input through the final classification decision.
+        </p>
+      </div>
+
+      <div class="artifact-timeline">
+
+        <article class="timeline-card">
+          <span>01</span>
+          <div>
+            <h3>Ambiguous Physical Events</h3>
+            <p>
+              Different physical conditions may produce similar sensor outputs. For example, two
+              machine faults may generate similar vibration patterns, making classification difficult.
+            </p>
+            <p>
+              When the characteristics of two classes overlap, even a well-designed model may have
+              difficulty separating them reliably.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>02</span>
+          <div>
+            <h3>Sensor Noise and Environmental Variation</h3>
+            <p>
+              Sensors are affected by thermal noise, interference, drift, vibration, electromagnetic
+              coupling, supply variation, and changes in the surrounding environment.
+            </p>
+            <p>
+              These effects can hide important signal features or create patterns that the model
+              incorrectly interprets as meaningful information.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>03</span>
+          <div>
+            <h3>Sensor Calibration and Mismatch</h3>
+            <p>
+              Sensors of the same type may produce different outputs because of process variation,
+              gain mismatch, offset, sensitivity differences, aging, or temperature dependence.
+            </p>
+            <p>
+              If calibration is incomplete, the model may receive different representations of the
+              same physical event and produce inconsistent predictions.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>04</span>
+          <div>
+            <h3>Analog Front-End Limitations</h3>
+            <p>
+              The analog front end can introduce offset, gain error, distortion, insufficient
+              bandwidth, clipping, or unwanted interference before the signal reaches the converter.
+            </p>
+            <p>
+              Poor filtering may allow unwanted frequencies into the signal, while excessive filtering
+              may remove features important for classification.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>05</span>
+          <div>
+            <h3>Sampling and Aliasing</h3>
+            <p>
+              If a signal is sampled too slowly, higher-frequency content can appear as a lower-frequency
+              component. This aliasing can create a misleading digital representation of the original
+              physical signal.
+            </p>
+            <p>
+              Incorrect sampling timing or an unsuitable sampling rate can cause the model to learn
+              features that do not accurately represent the real event.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>06</span>
+          <div>
+            <h3>Data Conversion Errors</h3>
+            <p>
+              ADC resolution, linearity, quantization noise, reference accuracy, and sampling behavior
+              all influence the quality of converted data.
+            </p>
+            <p>
+              If the converter cannot represent small but important signal differences, two physically
+              different conditions may appear identical to the AI/ML system.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>07</span>
+          <div>
+            <h3>Incomplete or Biased Training Data</h3>
+            <p>
+              A model can become confused when training data does not adequately represent the
+              conditions it will encounter during deployment.
+            </p>
+            <p>
+              Missing operating conditions, unbalanced classes, incorrect labels, or limited
+              environmental variation can cause the model to learn an incomplete view of the problem.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>08</span>
+          <div>
+            <h3>Feature Extraction Problems</h3>
+            <p>
+              Poorly chosen features may remove useful information, preserve irrelevant information,
+              or make different classes appear more similar than they actually are.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>09</span>
+          <div>
+            <h3>Model Overfitting</h3>
+            <p>
+              An overfit model performs well on training data but fails to generalize to new examples.
+              It may memorize specific patterns instead of learning the underlying behavior.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>10</span>
+          <div>
+            <h3>Out-of-Distribution Inputs</h3>
+            <p>
+              A model may receive an input significantly different from anything in its training data.
+              It may still produce a confident prediction without enough information for a reliable
+              decision.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>11</span>
+          <div>
+            <h3>Quantization and Hardware Approximation</h3>
+            <p>
+              Reduced-precision arithmetic can lower power, memory usage, and computational cost.
+              However, quantization can change the values used during inference if not properly evaluated.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>12</span>
+          <div>
+            <h3>Power, Timing, and Thermal Effects</h3>
+            <p>
+              Supply variation, temperature, workload, clock frequency, timing errors, thermal drift,
+              unstable power rails, and memory faults can affect AI/ML results during deployment.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="artifact-overview-card">
+        <p class="section-label">System-Level Insight</p>
+
+        <h2>Confusion Is Often a Chain Problem</h2>
+
+        <p>
+          Confusion in an AI/ML system is rarely caused by only one isolated block. Sensor noise may
+          be amplified by an analog circuit, reduced by limited ADC resolution, treated as a feature
+          during preprocessing, and then misinterpreted by the model.
+        </p>
+
+        <p>
+          System reliability therefore requires coordinated design across sensing, analog conditioning,
+          data conversion, digital processing, model development, hardware implementation, and validation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Confusion Matrix -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Classification Reliability</p>
+
+        <h2>Understanding the Confusion Matrix</h2>
+      </div>
+
+      <div class="artifact-overview-card">
+        <p>
+          A confusion matrix organizes classification outcomes by comparing the actual condition with
+          the model’s prediction.
+        </p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Actual / Predicted</th>
+                <th>Positive Prediction</th>
+                <th>Negative Prediction</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Actual Positive</td>
+                <td>
+                  <strong>True Positive</strong><br />
+                  The model correctly identifies the positive condition.
+                </td>
+                <td>
+                  <strong>False Negative</strong><br />
+                  The condition is present, but the model fails to detect it.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Actual Negative</td>
+                <td>
+                  <strong>False Positive</strong><br />
+                  The model detects a condition that is not present.
+                </td>
+                <td>
+                  <strong>True Negative</strong><br />
+                  The model correctly identifies the absence of the condition.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evaluation -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Evaluation</p>
+
+        <h2>How Classification Performance Is Measured</h2>
+      </div>
+
+      <div class="artifact-grid-3">
+
+        <article class="artifact-info-card">
+          <h3>Accuracy</h3>
+          <p>
+            Accuracy measures the overall percentage of correct predictions. It is most useful when
+            the classes are reasonably balanced.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Precision</h3>
+          <p>
+            Precision measures how many positive predictions were actually correct. It is important
+            when false alarms are costly.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Recall</h3>
+          <p>
+            Recall measures how many actual positive cases were detected. It is important when missing
+            a real event has serious consequences.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Mixed-Signal Perspective -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Mixed-Signal Perspective</p>
+
+        <h2>How Circuit-Level Design Influences AI Reliability</h2>
+
+        <p>
+          An AI model cannot recover information that has already been corrupted or lost before
+          inference. If a sensor signal is distorted by noise, clipped by limited dynamic range,
+          or poorly represented by the ADC, the model may receive an input that does not accurately
+          represent the original physical event.
+        </p>
+
+        <p>
+          This makes the analog and mixed-signal front end an important part of AI system reliability.
+          Circuit-level decisions can directly affect the quality of the features available to the model.
+        </p>
+
+        <div class="analog-points">
+
+          <div>
+            <h3>Signal-to-Noise Ratio</h3>
+            <p>
+              A higher signal-to-noise ratio makes it easier to distinguish meaningful features from
+              unwanted variation.
+            </p>
+          </div>
+
+          <div>
+            <h3>Offset and Gain Error</h3>
+            <p>
+              Offset and gain errors can shift or scale the signal, potentially changing the features
+              extracted by the AI/ML system.
+            </p>
+          </div>
+
+          <div>
+            <h3>Filtering and Bandwidth</h3>
+            <p>
+              Filtering can remove unwanted content, while adequate bandwidth ensures important
+              signal information is not lost.
+            </p>
+          </div>
+
+          <div>
+            <h3>ADC Resolution</h3>
+            <p>
+              ADC resolution affects how finely the signal is represented and how much useful information
+              is lost through quantization.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Reliability Improvements -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Reliability Improvements</p>
+
+        <h2>Methods for Reducing AI/ML Uncertainty</h2>
+      </div>
+
+      <div class="artifact-grid-3">
+
+        <article class="artifact-info-card">
+          <h3>Sensor Calibration</h3>
+          <p>
+            Calibration can reduce offset, gain variation, drift, and device-to-device differences
+            before data is supplied to the model.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Analog Filtering</h3>
+          <p>
+            Appropriate filtering can reduce unwanted noise and prevent out-of-band signals from
+            affecting sampled data.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Improved Data Quality</h3>
+          <p>
+            Representative, balanced, and well-labeled training data helps the model learn meaningful
+            patterns rather than accidental correlations.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Confidence Thresholds</h3>
+          <p>
+            A system can flag low-confidence predictions instead of treating every model output as
+            equally reliable.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Out-of-Distribution Detection</h3>
+          <p>
+            The system can identify inputs that differ significantly from training data and avoid
+            making overconfident decisions.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Hardware-in-the-Loop Testing</h3>
+          <p>
+            Testing the model with real sensors and hardware can reveal errors that may not appear
+            in software-only simulation.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Process</p>
+
+        <h2>Process Used to Develop the Artifact</h2>
+
+        <p>
+          I developed this artifact by starting with the idea of “confusion” in AI/ML and translating
+          it into technical concepts such as uncertainty, classification error, ambiguous data, and
+          signal degradation.
+        </p>
+
+        <p>
+          I then traced possible sources of uncertainty through a complete sensor-to-inference signal
+          chain. This included the sensor, analog front end, ADC, digital processing, model, and final
+          classification output.
+        </p>
+
+        <p>
+          Finally, I connected these sources of uncertainty to mixed-signal design considerations such
+          as noise, offset, bandwidth, dynamic range, quantization, power-supply quality, and sampling.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tools Used -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Tools Used</p>
+
+        <h2>Tools Used</h2>
+      </div>
+
+      <div class="simple-tools-list">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>ChatGPT</span>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Value Proposition</p>
+
+        <h2>Value of This Artifact</h2>
+
+        <p>
+          This artifact shows that AI/ML reliability depends on more than the model alone. It connects
+          algorithmic performance to data quality, signal-chain design, hardware implementation, and
+          deployment conditions.
+        </p>
+
+        <p>
+          It also demonstrates my ability to relate AI/ML concepts to analog and mixed-signal design.
+          Noise, offset, filtering, data conversion, power integrity, and timing can all affect the
+          quality of information presented to a model.
+        </p>
+
+        <p>
+          By examining uncertainty from the physical signal through the final decision, this artifact
+          presents a system-level view of AI reliability and shows how circuit-level engineering can
+          contribute to better AI/ML outcomes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Reflection</p>
+
+        <h2>Reflection</h2>
+
+        <p>
+          Working on this artifact helped me realize that an AI model can become confused before the
+          data even reaches the model. Noise, offset, conversion errors, and limited signal quality
+          can all affect the final decision.
+        </p>
+
+        <p>
+          This connected strongly with my mixed-signal background because it showed how circuit-level
+          design can directly influence AI reliability. It also helped me think about AI systems as a
+          complete chain rather than treating the model as an isolated block.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Summary</p>
+
+        <h2>Key Takeaways</h2>
+      </div>
+
+      <div class="takeaways-card">
+        <ul>
+          <li>
+            AI/ML confusion can result from ambiguous data, noisy inputs, model limitations, or
+            hardware-level errors.
+          </li>
+
+          <li>
+            Sensor quality and analog front-end performance influence the quality of data available
+            to the model.
+          </li>
+
+          <li>
+            ADC resolution, sampling rate, quantization, and linearity can affect the final AI/ML decision.
+          </li>
+
+          <li>
+            False positives and false negatives have different consequences depending on the application.
+          </li>
+
+          <li>
+            Reliable AI requires coordinated design across sensors, analog circuits, data conversion,
+            models, digital processing, and system validation.
+          </li>
+
+          <li>
+            Mixed-signal design is an important contributor to reliable AI/ML systems, especially in
+            edge and sensor-based applications.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      © 2025 Shashank Sagar Mamidi. Senior Analog Design Engineer.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
