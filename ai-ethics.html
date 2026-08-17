@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>AI Ethics | Shashank Sagar Mamidi</title>
+
+  <meta
+    name="description"
+    content="A professional artifact exploring fairness, transparency, accountability, privacy, safety, and responsible AI/ML systems."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">Shashank Sagar Mamidi</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#expertise">Expertise</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li>
+          <a href="artifacts.html" class="active-link">Artifacts</a>
+        </li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Artifact Hero -->
+    <section class="artifact-detail-hero">
+      <div class="artifact-detail-inner">
+        <p class="intro-label">Professional Artifact</p>
+
+        <h1>AI Ethics: Building Responsible and Trustworthy AI Systems</h1>
+
+        <p class="page-description">
+          A technical artifact exploring the ethical challenges of AI/ML systems, including fairness,
+          transparency, accountability, privacy, safety, bias, human oversight, and responsible
+          hardware-enabled deployment.
+        </p>
+
+        <div class="page-actions">
+          <a href="artifacts.html" class="btn btn-outline">
+            Back to Artifacts
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objective -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Objective</p>
+
+        <h2>Purpose of the Artifact</h2>
+
+        <p>
+          The purpose of this artifact is to explore how AI/ML systems can be designed and used
+          responsibly. AI systems influence decisions in areas such as healthcare, finance, education,
+          transportation, employment, security, and industrial automation.
+        </p>
+
+        <p>
+          As AI systems become more capable, it is important to consider not only whether a system
+          performs accurately, but also whether it is fair, explainable, safe, private, accountable,
+          and appropriate for the people affected by its decisions.
+        </p>
+
+        <p>
+          This artifact examines AI ethics from both an algorithmic and hardware perspective. It also
+          connects ethical AI to my professional background in semiconductor and mixed-signal design,
+          where reliability, verification, safety, privacy, and responsible system behavior are important
+          engineering considerations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Overview</p>
+
+        <h2>Why AI Ethics Matters</h2>
+
+        <p>
+          AI/ML systems learn from data and use learned patterns to produce predictions, classifications,
+          recommendations, or control decisions. Because these systems can operate at large scale, an
+          error or bias in the system may affect many people or critical processes.
+        </p>
+
+        <p>
+          Ethical concerns can arise from the data used to train a model, the way the model is designed,
+          the hardware and software used for deployment, and the decisions made by organizations using
+          the system.
+        </p>
+
+        <p>
+          Responsible AI therefore requires a complete system view. Technical performance is important,
+          but it must be considered together with human impact, safety, privacy, transparency, and
+          accountability.
+        </p>
+      </div>
+    </section>
+
+    <!-- Core Principles -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Core Principles</p>
+
+        <h2>Foundations of Ethical AI</h2>
+      </div>
+
+      <div class="artifact-grid-3">
+
+        <article class="artifact-info-card">
+          <h3>Fairness</h3>
+
+          <p>
+            AI systems should avoid unjustified discrimination and should be evaluated across
+            different groups, conditions, and use cases.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Transparency</h3>
+
+          <p>
+            Users and stakeholders should have a reasonable understanding of how a system works,
+            what information it uses, and what its output means.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Accountability</h3>
+
+          <p>
+            There should be clear responsibility for how an AI system is designed, validated,
+            deployed, monitored, and corrected when problems occur.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Privacy</h3>
+
+          <p>
+            Personal and sensitive data should be collected, stored, processed, and shared responsibly,
+            with appropriate protection and user awareness.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Safety and Reliability</h3>
+
+          <p>
+            AI systems should be tested under expected and unexpected conditions and should behave
+            predictably when errors or abnormal inputs occur.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Human Oversight</h3>
+
+          <p>
+            Human judgment should remain available for important decisions, especially when model
+            confidence is low or the consequences of an error are significant.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Ethical Risk Areas -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Risk Areas</p>
+
+        <h2>Where Ethical Problems Can Enter an AI System</h2>
+      </div>
+
+      <div class="artifact-timeline">
+
+        <article class="timeline-card">
+          <span>01</span>
+
+          <div>
+            <h3>Biased Training Data</h3>
+
+            <p>
+              If the training data is incomplete, unbalanced, or influenced by historical bias, the
+              model may learn patterns that produce unfair or inaccurate results for certain groups.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>02</span>
+
+          <div>
+            <h3>Unclear Model Decisions</h3>
+
+            <p>
+              Complex models may produce outputs that are difficult to explain. This can make it
+              challenging for users to understand, challenge, or verify an important decision.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>03</span>
+
+          <div>
+            <h3>Privacy Loss</h3>
+
+            <p>
+              AI systems may process personal, biometric, medical, behavioral, or location-related
+              data. Poor data handling can expose individuals to privacy and security risks.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>04</span>
+
+          <div>
+            <h3>Unsafe Deployment</h3>
+
+            <p>
+              A model that performs well in development may fail under real-world conditions such as
+              environmental changes, unusual inputs, sensor faults, or changing operating conditions.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>05</span>
+
+          <div>
+            <h3>Automation Without Oversight</h3>
+
+            <p>
+              Relying completely on automated decisions can be risky when the system has limited
+              context or when the consequences of an incorrect decision are serious.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <span>06</span>
+
+          <div>
+            <h3>Unclear Responsibility</h3>
+
+            <p>
+              When an AI system produces an incorrect outcome, responsibility should not be hidden
+              behind the technology. Design, deployment, and monitoring responsibilities should be clear.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Responsible AI Lifecycle -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Lifecycle</p>
+
+        <h2>Responsible AI Across the Development Lifecycle</h2>
+      </div>
+
+      <div class="artifact-grid-3">
+
+        <article class="artifact-info-card">
+          <h3>Define the Purpose</h3>
+
+          <p>
+            Clearly identify what problem the system is intended to solve and whether AI is appropriate
+            for that problem.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Review the Data</h3>
+
+          <p>
+            Examine data quality, representation, privacy, labeling, collection methods, and possible
+            sources of bias.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Validate the Model</h3>
+
+          <p>
+            Evaluate accuracy, fairness, robustness, confidence, failure modes, and performance across
+            relevant conditions.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Verify the Hardware</h3>
+
+          <p>
+            Confirm that sensors, data converters, memory, processors, power systems, and interfaces
+            operate reliably under expected conditions.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Monitor Deployment</h3>
+
+          <p>
+            Continue observing the system after deployment because data, environments, users, and
+            operating conditions may change over time.
+          </p>
+        </article>
+
+        <article class="artifact-info-card">
+          <h3>Provide Correction</h3>
+
+          <p>
+            Establish mechanisms for reporting errors, correcting harmful behavior, updating the
+            system, and involving human decision-makers when needed.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Hardware Perspective -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Hardware Perspective</p>
+
+        <h2>How Hardware Design Supports Ethical AI</h2>
+
+        <p>
+          AI ethics is often discussed in relation to algorithms and data, but hardware also affects
+          the safety, privacy, reliability, and transparency of AI systems.
+        </p>
+
+        <p>
+          A sensor may collect sensitive information, an edge processor may determine whether data
+          remains local, and a power or timing failure may affect the reliability of an AI decision.
+          Hardware design therefore contributes directly to how responsibly a system operates.
+        </p>
+
+        <div class="analog-points">
+
+          <div>
+            <h3>Privacy at the Edge</h3>
+
+            <p>
+              Local processing can reduce the need to transmit sensitive sensor data to remote systems,
+              helping limit data exposure.
+            </p>
+          </div>
+
+          <div>
+            <h3>Reliable Sensing</h3>
+
+            <p>
+              Accurate sensors and well-designed analog front ends help prevent incorrect decisions
+              caused by noisy or distorted inputs.
+            </p>
+          </div>
+
+          <div>
+            <h3>Safe Power Delivery</h3>
+
+            <p>
+              Stable power systems support predictable behavior and reduce the possibility of
+              hardware-induced errors during AI operation.
+            </p>
+          </div>
+
+          <div>
+            <h3>Hardware Verification</h3>
+
+            <p>
+              PVT analysis, reliability checks, fault testing, and silicon characterization help
+              confirm that the deployed system behaves as intended.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Analog and Mixed-Signal Perspective -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Analog Design Perspective</p>
+
+        <h2>Relevance to Analog and Mixed-Signal IC Design</h2>
+
+        <p>
+          Responsible AI depends on reliable information entering the system. Analog and mixed-signal
+          circuits are responsible for sensing, conditioning, converting, timing, and powering many
+          AI-enabled systems.
+        </p>
+
+        <p>
+          If a sensor interface introduces excessive noise, an ADC loses important information, or a
+          power-management circuit behaves unpredictably, the AI system may produce an incorrect result.
+          This means that circuit quality can influence not only performance, but also trust and safety.
+        </p>
+
+        <p>
+          As a Senior Analog Design Engineer, I see AI ethics as a system-level responsibility. Ethical
+          behavior is supported by accurate measurement, robust verification, dependable silicon, and
+          clear understanding of how hardware affects the final decision.
+        </p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Process</p>
+
+        <h2>Process Used to Develop the Artifact</h2>
+
+        <p>
+          I developed this artifact by identifying the main principles of ethical AI and organizing
+          them around fairness, transparency, accountability, privacy, safety, and human oversight.
+        </p>
+
+        <p>
+          I then examined where ethical risks can enter an AI/ML lifecycle, including data collection,
+          model development, hardware implementation, deployment, and ongoing monitoring.
+        </p>
+
+        <p>
+          Finally, I added a semiconductor and mixed-signal perspective to show that responsible AI
+          also depends on reliable sensing, secure data handling, power management, conversion accuracy,
+          hardware verification, and dependable system operation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tools Used -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Tools Used</p>
+
+        <h2>Tools Used</h2>
+      </div>
+
+      <div class="simple-tools-list">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>ChatGPT</span>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Value Proposition</p>
+
+        <h2>Value of This Artifact</h2>
+
+        <p>
+          This artifact is valuable because it presents AI ethics as an engineering responsibility
+          rather than only a policy or social issue. It shows how fairness, transparency, privacy,
+          safety, and accountability must be considered throughout the AI/ML lifecycle.
+        </p>
+
+        <p>
+          The artifact also connects ethical AI to semiconductor design. Reliable sensors, accurate
+          data conversion, stable power delivery, hardware verification, and local processing can all
+          contribute to safer and more trustworthy AI systems.
+        </p>
+
+        <p>
+          By including both AI/ML and hardware perspectives, this artifact demonstrates my ability to
+          think beyond circuit-level performance and consider the broader impact of technology.
+        </p>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section class="section">
+      <div class="artifact-overview-card">
+        <p class="section-label">Reflection</p>
+
+        <h2>Reflection</h2>
+
+        <p>
+          Working on this artifact helped me understand that responsible AI is not only about building
+          accurate models. It is also about asking whether the system is fair, safe, explainable,
+          private, and reliable for the people who use or depend on it.
+        </p>
+
+        <p>
+          Connecting AI ethics to my mixed-signal background made the topic more meaningful to me.
+          Hardware decisions involving sensing, power, conversion, and reliability can directly affect
+          how much people trust an AI system and how safely it operates.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="section">
+      <div class="section-header">
+        <p class="section-label">Summary</p>
+
+        <h2>Key Takeaways</h2>
+      </div>
+
+      <div class="takeaways-card">
+        <ul>
+          <li>
+            Ethical AI should be fair, transparent, accountable, private, safe, and subject to
+            appropriate human oversight.
+          </li>
+
+          <li>
+            Bias can enter through training data, feature selection, model design, deployment
+            conditions, or system operation.
+          </li>
+
+          <li>
+            AI systems should be evaluated beyond overall accuracy, including robustness, fairness,
+            confidence, and failure behavior.
+          </li>
+
+          <li>
+            Hardware contributes to AI ethics through reliable sensing, privacy-preserving edge
+            processing, power integrity, timing, and system verification.
+          </li>
+
+          <li>
+            Responsible AI requires monitoring and correction after deployment, not only testing
+            during development.
+          </li>
+
+          <li>
+            Ethical considerations should be integrated into engineering decisions from system
+            definition through silicon validation and deployment.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      © 2025 Shashank Sagar Mamidi. Senior Analog Design Engineer.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
